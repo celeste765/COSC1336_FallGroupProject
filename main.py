@@ -36,6 +36,9 @@ def plotData(data):
 # file or text
 
 
+# This function takes a tuple that is returned by the readfile function
+# The first value in the tuple is the file information
+# The second value in the tuple is the encryption key
 def encrypt(info):
     # A dictionary to store the characters and their counts
     fileTestDict = {}
