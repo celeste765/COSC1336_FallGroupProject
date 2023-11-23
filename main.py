@@ -5,19 +5,20 @@ print(f"Opening {fileName}.\n")
 
 
 def readFile(file):
+    # A dictionary to store the characters and their counts
     fileTestDict = {}
-    f = open(file, "r")
-    decoded_lines = []
-    for line in f:
-        for character in line:
-            if character in fileTestDict:
-                fileTestDict[character] += 1
-            else:
-                fileTestDict[character] = 1
+    lines = []
+    with open(file, "r") as file:
+        for line in file:
+            for character in line:
+                if character in fileTestDict:
+                    fileTestDict[character] += 1
+                else:
+                    fileTestDict[character] = 1
 
-    print(fileTestDict)
+        print(fileTestDict)
 
-    pass
+    return lines
 
 
 # This is a dict used to test the plotdata function
