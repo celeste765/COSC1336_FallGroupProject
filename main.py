@@ -22,7 +22,6 @@ def readFile(file):
 
 
 # This is a dict used to test the plotdata function
-# It can be deleted once the function works
 test_dictionary = {"e": 1, "c": 3, "d": 5}
 
 
