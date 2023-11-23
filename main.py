@@ -11,9 +11,9 @@ def addToOrd(value, encryption_key):
 
 def readFile():
     fileName = input("Enter the name of the file including the extension.\n")
-    print(f"Opening {fileName}.\n")
-    encryption_key = input("Enter an encryption key.\n")
-    print("Encryption key entered.\n")
+    print(f"\nOpening {fileName}.\n")
+    encryption_key = input("\nEnter an encryption key.\n")
+    print("\nEncryption key entered.\n")
     return (fileName, encryption_key)
 
 
