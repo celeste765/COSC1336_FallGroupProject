@@ -60,6 +60,7 @@ def encrypt(info):
         for line in file:
             for character in line:
                 encrypted += str(addToOrd(character, encryption_key))
+                encrypted += "x"
                 if character == " ":
                     character = "_"
                 elif character == "\n":
@@ -71,19 +72,38 @@ def encrypt(info):
 
     with open("encrypted.txt", "w") as enc:
         enc.write(encrypted)
-    return encrypted, fileTestDict
+    return (encrypted, fileTestDict)
 
 
 # This function will do the opposite of the encrypt function given
 # a decryption key
-def decrypt():
-    pass
+def decrypt(data):
+    file = data[0]
+    encryption_key = data[1]
+    message = ""
+    with open(file, "r") as fl:
+        chars = fl.read().split("x")
+        for item in chars:
+            if item == """""":
+                del chars[chars.index(item)]
+        print(chars)
+    for item in chars:
+        if item == "38":
+            message += " "
+        else:
+            item = int(item)
+            encryption_key = int(encryption_key)
+            message += str(chr(item - encryption_key))
+
+    print(message)
 
 
 def main():
     print("Add functions below this print statement.\n")
-    encrypt(readFile())
+    decrypt(readFile())
+    # encrypt(readFile())
     # plotData()
+    # createMessage()
 
 
 main()
