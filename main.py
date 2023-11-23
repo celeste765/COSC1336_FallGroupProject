@@ -13,7 +13,7 @@ def readFile():
     fileName = input("Enter the name of the file including the extension.\n")
     print(f"Opening {fileName}.\n")
     encryption_key = input("Enter an encryption key.\n")
-    print("Encryption key entered.")
+    print("Encryption key entered.\n")
     return (fileName, encryption_key)
 
 
@@ -46,20 +46,22 @@ def encrypt(info):
     # A dictionary to store the characters and their counts
     fileTestDict = {}
     file = info[0]
+    count = 0
     encryption_key = int(info[1])
     encrypted = ""
     with open(file, "r") as file:
         for line in file:
-            stripped_line = line.strip("\n")
-            for character in stripped_line:
+            for character in line:
+                encrypted += str(addToOrd(character, encryption_key))
+                if character == " ":
+                    character = "_"
+                elif character == "\n":
+                    character = "*"
                 if character in fileTestDict:
                     fileTestDict[character] += 1
                 else:
                     fileTestDict[character] = 1
 
-        # print(fileTestDict)
-    for key in fileTestDict:
-        encrypted += str(addToOrd(key, encryption_key))
     print(encrypted)
     return encrypted, fileTestDict
 
@@ -72,7 +74,8 @@ def decrypt():
 
 def main():
     print("Add functions below this print statement.\n")
-    plotData(encrypt(readFile()))
+    encrypt(readFile())
+    # plotData()
 
 
 main()
