@@ -62,7 +62,8 @@ def encrypt(info):
                 else:
                     fileTestDict[character] = 1
 
-    print(encrypted)
+    with open("encrypted.txt", "w") as enc:
+        enc.write(encrypted)
     return encrypted, fileTestDict
 
 
