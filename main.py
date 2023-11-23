@@ -41,6 +41,11 @@ def plotData(data):
     plt.show()
 
 
+def plot_no_library():
+    # Here we need to write a function to plot the data without a library
+    # similar to the example in the google doc here:
+    # https://docs.google.com/document/d/1_Ax3DurS4JfI8jJaGuU6g3Fc26kx0lMokNRkqAaI8BE/edit
+
 # This function should encrypt some text given a key as an argument
 # The key will be something that makes the encryption unique for that
 # file or text
@@ -76,7 +81,7 @@ def encrypt(info):
 
 
 # This function will do the opposite of the encrypt function given
-# a decryption key
+# a decryption key using the chr instead of the ord function
 def decrypt(data):
     file = data[0]
     encryption_key = data[1]
