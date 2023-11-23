@@ -1,6 +1,13 @@
 import matplotlib.pyplot as plt
 
 
+def createMessage():
+    message = input("Enter the message you would like to encrypt.")
+    message_name = input("What would you like to name this message?")
+    with open(f"{message_name}.txt", "w") as file:
+        file.write(message)
+
+
 # This function is the encryption backbone basically
 # It takes the value of a char and adds the encryption key to it
 # It can be made more complex later
