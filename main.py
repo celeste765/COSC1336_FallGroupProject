@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 
 
+# This function is the encryption backbone basically
+# It takes the value of a char and adds the encryption key to it
+# It can be made more complex later
 def addToOrd(value, encryption_key):
     output = ord(value) + encryption_key
     return output
@@ -21,7 +24,7 @@ test_dictionary = {"e": 1, "c": 3, "d": 5}
 def plotData(data):
     x_vals = []
     y_vals = []
-
+    data = data[1]
     for key in data:
         x_vals.append(key)
     for key in data:
@@ -58,7 +61,7 @@ def encrypt(info):
     for key in fileTestDict:
         encrypted += str(addToOrd(key, encryption_key))
     print(encrypted)
-    return encrypted
+    return encrypted, fileTestDict
 
 
 # This function will do the opposite of the encrypt function given
@@ -69,7 +72,7 @@ def decrypt():
 
 def main():
     print("Add functions below this print statement.\n")
-    encrypt(readFile())
+    plotData(encrypt(readFile()))
 
 
 main()
