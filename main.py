@@ -36,7 +36,8 @@ def plotData(data):
         x_vals.append(key)
     for key in data:
         y_vals.append(data[key])
-
+    x_vals = sorted(x_vals)
+    y_vals = sorted(y_vals)
     plt.bar(x_vals, y_vals)
     plt.show()
 
@@ -45,6 +46,8 @@ def plot_no_library():
     # Here we need to write a function to plot the data without a library
     # similar to the example in the google doc here:
     # https://docs.google.com/document/d/1_Ax3DurS4JfI8jJaGuU6g3Fc26kx0lMokNRkqAaI8BE/edit
+    pass
+
 
 # This function should encrypt some text given a key as an argument
 # The key will be something that makes the encryption unique for that
@@ -105,9 +108,9 @@ def decrypt(data):
 
 def main():
     print("Add functions below this print statement.\n")
-    decrypt(readFile())
+    # decrypt(readFile())
     # encrypt(readFile())
-    # plotData()
+    plotData(encrypt(readFile()))
     # createMessage()
 
 
