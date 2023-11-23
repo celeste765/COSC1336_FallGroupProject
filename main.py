@@ -23,10 +23,15 @@ def plotData(data):
     plt.show()
 
 
+# This function should encrypt some text given a key as an argument
+# The key will be something that makes the encryption unique for that
+# file or text
 def encrypt():
     pass
 
 
+# This function will do the opposite of the encrypt function given
+# a decryption key
 def decrypt():
     pass
 
