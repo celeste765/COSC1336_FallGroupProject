@@ -1,7 +1,14 @@
 import matplotlib.pyplot as plt
 
+fileName = input("Enter the name of the file including the extension.\n")
+print(f"Opening {fileName}.\n")
 
-def readFile():
+
+def readFile(file):
+    f = open(file, "r")
+    decoded_lines = []
+    for line in f:
+        print(line)
     pass
 
 
@@ -37,8 +44,8 @@ def decrypt():
 
 
 def main():
-    print("Add functions below this print statement.")
-    plotData(test_dictionary)
+    print("Add functions below this print statement.\n")
+    readFile(fileName)
 
 
 main()
