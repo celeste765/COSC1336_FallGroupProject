@@ -5,10 +5,18 @@ print(f"Opening {fileName}.\n")
 
 
 def readFile(file):
+    fileTestDict = {}
     f = open(file, "r")
     decoded_lines = []
     for line in f:
-        print(line)
+        for character in line:
+            if character in fileTestDict:
+                fileTestDict[character] += 1
+            else:
+                fileTestDict[character] = 1
+
+    print(fileTestDict)
+
     pass
 
 
